@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/webhook.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "api/webhook.py"
+    }
+  ],
+  "env": {
+    "FILE_SERVER_BOT_TOKEN": "@file_server_bot_token",
+    "BOT_USERNAME": "@bot_username",
+    "STORAGE_CHANNEL_ID": "@storage_channel_id",
+    "F_SUB_CHANNEL_ID": "@f_sub_channel_id",
+    "F_SUB_CHANNEL_LINK": "@f_sub_channel_link",
+    "MONGODB_URI": "@mongodb_uri",
+    "MONGO_DB_NAME": "@mongo_db_name",
+    "MONGO_COLLECTION": "@mongo_collection"
+  }
+}
